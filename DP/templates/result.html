@@ -1,0 +1,80 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8e9d6; /* A warm, romantic background color */
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .positive-outcome {
+            background-color: #e74c3c; /* Red color for positive outcome */
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .negative-outcome {
+            background-color: #2ecc71; /* Green color for negative outcome */
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction Result</h1>
+        {% if result == 1 %}
+            <p class="negative-outcome">Not likely to have diabetes</p>
+        {% else %}
+	    <p class="positive-outcome">Likely to have diabetes</p>
+        {% endif %}
+        <a href="/">Go back</a>
+    </div>
+</body>
+</html>
